@@ -12,6 +12,8 @@
 #include "FoodScene.h"
 #include "EggScene.h"
 #include "SimpleAudioEngine.h"
+#include "ui/CocosGUI.h"
+#include "extensions/cocos-ext.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -195,10 +197,12 @@ bool MainScene::init()
     _fMax = _level*800;
     _eMax = _level*10;
     
+    
     //背景
     auto background = Sprite::create("img/bg.png");
     background->setPosition(Vec2(size.width/2,-480));
     this->addChild(background);
+     
     
     //ラベル
     //秒数
@@ -283,7 +287,6 @@ bool MainScene::init()
         _upDown -= 1;
         log("%i",_upDown);
     }
-
     
     return true;
 }
