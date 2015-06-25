@@ -130,7 +130,7 @@ void EggScene::update(float dt)
             UserDefault::getInstance()->setIntegerForKey("levelkey", level);
             
             //レベルから最大値を取得
-            _aMax = _level*10;
+            _aMax = (_level*2)*10;
             _fMax = _level*800;
             _eMax = _level*10;
             
@@ -177,7 +177,7 @@ bool EggScene::init()
     _level = userDefault->getIntegerForKey("levelkey");
     
     //レベルから最大値を取得
-    _aMax = _level*10;
+    _aMax = (_level*2)*10;
     _fMax = _level*800;
     _eMax = _level*10;
     

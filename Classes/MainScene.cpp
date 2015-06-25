@@ -138,7 +138,7 @@ void MainScene::update(float dt)
             UserDefault::getInstance()->setIntegerForKey("levelkey", level);
             
             //レベルから最大値を取得
-            _aMax = _level*10;
+            _aMax = (_level*2)*10;
             _fMax = _level*800;
             _eMax = _level*10;
             
@@ -193,15 +193,22 @@ bool MainScene::init()
     */
     
     //レベルから最大値を取得
-    _aMax = _level*10;
+    _aMax = (_level*2)*10;
     _fMax = _level*800;
     _eMax = _level*10;
     
     
+    //スクロールビュー
+    auto pScroolView = ScrollView::create(size);
+    this->addChild(pScroolView);
     //背景
     auto background = Sprite::create("img/bg.png");
-    background->setPosition(Vec2(size.width/2,-480));
-    this->addChild(background);
+    background->setPosition(Vec2(size.width/2,size.height/2));
+    //this->addChild(background);
+    pScroolView->setContainer(background);
+    pScroolView->setContentSize(background->getContentSize());
+    pScroolView->setContentOffset(Vec2(0,0),true);
+
      
     
     //ラベル
