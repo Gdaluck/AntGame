@@ -41,6 +41,9 @@ public:
     CC_SYNTHESIZE_RETAIN(cocos2d::Label *, _foodsLabel, FoodsLabel);
     CC_SYNTHESIZE(int, _fMax, FMax);//食糧の最大値
     
+    
+    
+    
     CC_SYNTHESIZE(int, _eggs, Eggs);//卵の数
     CC_SYNTHESIZE_RETAIN(cocos2d::Label *, _eggsLabel, EggsLabel);
     CC_SYNTHESIZE(int, _eCount, ECount);//卵の生まれるカウント
